@@ -19,10 +19,29 @@ function toggleDescription() {
 }
 
 onMounted(() => {
-  const savedHosts = localStorage.getItem('caddyHosts');
-  if (savedHosts) {
-    hosts.value = JSON.parse(savedHosts);
+
+  //console log the env
+  console.log(import.meta.env)
+  
+
+  if(import.meta.env.VITE_PERSIST_DATA_ON_SERVER === 'true') {
+    fetch(`${import.meta.env.VITE_API_URL}/read-data`)
+      .then(response => response.json())
+      .then(data => {
+        hosts.value = data;
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
   }
+
+  if(import.meta.env.VITE_PERSIST_DATA_ON_SERVER === 'false') {
+    const savedHosts = localStorage.getItem('caddyHosts');
+    if (savedHosts) {
+      hosts.value = JSON.parse(savedHosts);
+    }
+  }
+
 });
 
 function saveHost(host: CaddyHost) {
@@ -32,7 +51,21 @@ function saveHost(host: CaddyHost) {
   } else {
     hosts.value.push(host);
   }
-  localStorage.setItem('caddyHosts', JSON.stringify(hosts.value));
+
+  if(import.meta.env.VITE_PERSIST_DATA_ON_SERVER === 'true') {
+    fetch(`${import.meta.env.VITE_API_URL}/save-data`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(hosts.value),
+    });
+  }
+
+  if(import.meta.env.VITE_PERSIST_DATA_ON_SERVER === 'false') {
+    localStorage.setItem('caddyHosts', JSON.stringify(hosts.value));
+  }
+
   showForm.value = false;
   editingHost.value = undefined;
 }

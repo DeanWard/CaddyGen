@@ -1,0 +1,18 @@
+meta {
+  name: Save Json
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/save-json
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "foo" : "bar",
+    "bar" : "boo"
+  }
+}

@@ -1,9 +1,18 @@
 version: '3.8'
 
 services:
-  app:
-    image: wardy784/caddygen:latest
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend
     ports:
-      - "8189:80"
-    restart: unless-stopped
-    container_name: caddygen
+      - "8195:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: backend

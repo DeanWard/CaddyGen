@@ -1,0 +1,134 @@
+[
+  {
+    "id": "42e0df82-10a3-4bd3-a6b5-c69bd6b1abe4",
+    "domain": "dfasdfsdfieiow",
+    "encode": false,
+    "tls": {
+      "email": "",
+      "selfSigned": false,
+      "certFile": "",
+      "keyFile": ""
+    },
+    "security": {
+      "ipFilter": {
+        "enabled": false,
+        "allow": [],
+        "block": []
+      },
+      "rateLimit": {
+        "enabled": false,
+        "requests": 100,
+        "window": "1m"
+      },
+      "cspEnabled": false,
+      "csp": "",
+      "forwardAuth": {
+        "enabled": false,
+        "url": "",
+        "verifyHeader": "",
+        "verifyValue": ""
+      }
+    },
+    "cors": {
+      "enabled": false,
+      "allowOrigins": [],
+      "allowMethods": [],
+      "allowHeaders": []
+    },
+    "performance": {
+      "brotli": false,
+      "cacheControlEnabled": false,
+      "cacheControl": ""
+    },
+    "reverseProxy": "http://localhost:8096",
+    "presetName": "Jellyfin"
+  },
+  {
+    "id": "17148f07-cbe3-4611-84a7-b6a6126b9565",
+    "domain": "fewfew",
+    "encode": false,
+    "tls": {
+      "email": "",
+      "selfSigned": false,
+      "certFile": "",
+      "keyFile": ""
+    },
+    "security": {
+      "ipFilter": {
+        "enabled": false,
+        "allow": [],
+        "block": []
+      },
+      "rateLimit": {
+        "enabled": false,
+        "requests": 100,
+        "window": "1m"
+      },
+      "cspEnabled": false,
+      "csp": "",
+      "forwardAuth": {
+        "enabled": false,
+        "url": "",
+        "verifyHeader": "",
+        "verifyValue": ""
+      }
+    },
+    "cors": {
+      "enabled": false,
+      "allowOrigins": [],
+      "allowMethods": [],
+      "allowHeaders": []
+    },
+    "performance": {
+      "brotli": false,
+      "cacheControlEnabled": false,
+      "cacheControl": ""
+    },
+    "reverseProxy": "http://localhost:32400",
+    "presetName": "Plex"
+  },
+  {
+    "id": "7df2344d-4d83-4ff5-a14a-f8fac14ae949",
+    "domain": "dWED",
+    "encode": false,
+    "tls": {
+      "email": "",
+      "selfSigned": false,
+      "certFile": "",
+      "keyFile": ""
+    },
+    "security": {
+      "ipFilter": {
+        "enabled": false,
+        "allow": [],
+        "block": []
+      },
+      "rateLimit": {
+        "enabled": false,
+        "requests": 100,
+        "window": "1m"
+      },
+      "cspEnabled": false,
+      "csp": "",
+      "forwardAuth": {
+        "enabled": false,
+        "url": "",
+        "verifyHeader": "",
+        "verifyValue": ""
+      }
+    },
+    "cors": {
+      "enabled": false,
+      "allowOrigins": [],
+      "allowMethods": [],
+      "allowHeaders": []
+    },
+    "performance": {
+      "brotli": false,
+      "cacheControlEnabled": false,
+      "cacheControl": ""
+    },
+    "reverseProxy": "http://localhost:8096",
+    "presetName": "Emby"
+  }
+]
